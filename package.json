@@ -1,0 +1,60 @@
+{
+  "name": "r-emergency",
+  "homepage": "https://github.com/Annihil/revolut-emergency",
+  "version": "6.3.0",
+  "main": "public/electron.js",
+  "license": "MIT",
+  "author": "Annihil",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19",
+    "cross-env": "^7",
+    "currency-symbol-map": "^4",
+    "lottie-web": "^5",
+    "moment": "^2",
+    "node-machine-id": "^1",
+    "qs": "^6",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-lottie": "^1",
+    "react-scripts": "^3",
+    "react-useinterval": "^1",
+    "styled-components": "^5",
+    "typescript": "^3",
+    "he": "^1",
+    "form-data": "^3"
+  },
+  "devDependencies": {
+    "@types/node": "^12",
+    "@types/qs": "^6",
+    "@types/react": "^16",
+    "@types/react-dom": "^16",
+    "@types/react-lottie": "^1",
+    "@types/styled-components": "^5",
+    "@types/he": "^1",
+    "concurrently": "^5",
+    "electron": "^8",
+    "wait-on": "^4"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "start": "concurrently \"cross-env EXTEND_ESLINT=true BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && cross-env DEV=1 electron .\""
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "react-hooks/exhaustive-deps": "off",
+      "no-loop-func": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      "last 1 electron version",
+      "chrome 79"
+    ],
+    "development": [
+      "last 1 electron version",
+      "chrome 79"
+    ]
+  }
+}
